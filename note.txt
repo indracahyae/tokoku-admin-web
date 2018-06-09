@@ -1,0 +1,29 @@
+expressJs > express generator
+sequelize setup
+setup mvc
+testing API
+setup PUG + bootstrap for client (admin)
+
+MIDDLEWARE
+https://stackoverflow.com/questions/12921658/use-specific-middleware-in-express-for-all-paths-except-a-specific-one
+https://expressjs.com/en/guide/writing-middleware.html
+
+WEB - ADMIN
+Login           // OK
+
+Profil:
+    Profil Saya (RU) //OK
+    Log Out     //OK
+Transaksi:
+    Penjualan (master, detail)      //DISINI
+    Pengiriman  (master, detail)    //DISINI
+Master Data:
+    user/pegawai    //crud OK
+    customer        //RUD OK    (FOTO)
+    Barang          //CRUD OK (FOTO)
+    Suplier         //crud OK
+    Ekspedisi (crud) ///crud OK
+
+Keranjang Belanja ??? (bisa hanya pakai cache)
+
+

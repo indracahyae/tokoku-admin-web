@@ -1,0 +1,57 @@
+extends _bootstrap
+//- extends layout
+
+block body
+  .container
+    
+    .page-header
+      h1 Form Barang #{data.kode}
+    
+    form(action="/barang/"+data.id method="post")
+        <div class="form-group">
+            label Kode Barang
+            input.form-control(type='text' placeholder='Kode Barang' name='kode' value=data.kode)
+        </div>
+        <div class="form-group">
+            label Nama
+            input.form-control(type='text' placeholder='Nama' name='nama' value=data.nama)
+        </div>
+        <div class="form-group">
+            label Harga
+            input.form-control(type='number' placeholder='Harga' name='harga' value=data.harga)
+        </div>
+        <div class="form-group">
+            label Stok
+            input.form-control(type='number' placeholder='Stok' name='stok' value=data.stok)
+        </div>
+        <div class="form-group">
+            label Deskripsi
+            input.form-control(type='text' placeholder='Deskripsi' name='deskripsi' value=data.deskripsi)
+        </div>
+        <div class="form-group">
+            label Diskon
+            input.form-control(type='number' placeholder='Diskon' name='diskon' value=data.diskon)
+        </div>
+        <div class="form-group">
+            <label for="akses">Kategori :</label>
+            <select name="kategori" class="form-control">
+                each kategori, i in kategoris
+                    <option value=#{kategori.id} #{data.id_kategori == kategori.id ? "selected" : ""} >#{kategori.nama}</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="akses">Suplier :</label>
+            <select name="suplier" class="form-control">
+                each sup, i in supliers
+                    <option value=#{sup.id} #{data.id_suplier == sup.id ? "selected" : ""} >#{sup.nama}</option>
+            </select>
+        </div>
+
+        <button type="submit" class="btn btn-default">Simpan</button>
+
+block scripts 
+  script.
+    //- console.log(datas);
+    $(function () {
+      $('[data-toggle="tooltip"]').tooltip()
+    });

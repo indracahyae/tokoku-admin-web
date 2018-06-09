@@ -1,0 +1,35 @@
+extends _bootstrap
+//- extends layout
+
+block body
+  .container
+    
+    .page-header
+      h1 Form Suplier 
+    
+    form(action="/suplier/"+data.id method="post")
+        <div class="form-group">
+            <label for="exampleInputEmail1"> Nama </label>
+            input.form-control(type='text' placeholder='ekspedisi' name='nama' value=data.nama )
+        </div>
+        <div class="form-group">
+            <label for="exampleInputEmail1"> Alamat </label>
+            input.form-control(type='text' placeholder='ekspedisi' name='alamat' value=data.alamat )
+        </div>
+        <div class="form-group">
+            <label for="exampleInputEmail1"> Telepon </label>
+            input.form-control(type='text' placeholder='ekspedisi' name='tlp' value=data.tlp )
+        </div>
+        <div class="form-group">
+            <label for="exampleInputEmail1"> Keterangan </label>
+            input.form-control(type='text' placeholder='ekspedisi' name='keterangan' value=data.keterangan )
+        </div>
+
+        <button type="submit" class="btn btn-default">Simpan</button>
+
+block scripts 
+  script.
+    //- console.log(datas);
+    $(function () {
+      $('[data-toggle="tooltip"]').tooltip()
+    });

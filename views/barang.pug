@@ -1,0 +1,107 @@
+extends _bootstrap
+//- extends layout
+
+block body
+  .container
+    
+    .page-header
+      h1 Barang 
+
+    <a class="btn btn-default" href="#" role="button" data-toggle='modal' data-target='#modalFormEks'>Create</a>
+    
+    <table class="table table-hover">
+        <thead>
+            <tr>
+                <th class="col-md-2">#</th>
+                <th>Kode</th>
+                <th>Nama</th>
+                <th>Harga</th>
+                <th>Stok</th>
+                <th>image</th>
+                <th>deskripsi</th>
+                <th>Diskon</th>
+                <th>Suplier</th>
+                <th>Kategori</th>
+            </tr>
+        </thead>
+        <tbody>
+            each barang, i in datas
+                <tr>
+                    <td>
+                        a.btn.btn-default(href=`/barang/edit-`+barang.id role='button' style="border-width:0")
+                         span.glyphicon.glyphicon-pencil(aria-hidden='true')
+                        a.btn.btn-default(href=`/barang/del-`+barang.id role='button' style="border-width:0")
+                         span.glyphicon.glyphicon-trash(aria-hidden='true')
+                    </td>
+                    <td>#{barang.kode}</td>
+                    <td>#{barang.nama}</td>
+                    <td>#{barang.harga}</td>
+                    <td>#{barang.stok}</td>
+                    <td>#{barang.image}</td>
+                    <td>#{barang.deskripsi}</td>
+                    <td>#{barang.diskon}</td>
+                    <td>#{barang.Suplier.nama}</td>
+                    <td>#{barang.Kategori.nama}</td>
+                </tr>
+        </tbody>
+    </table> 
+
+    
+
+    #modalFormEks.modal.fade(tabindex='-1', role='dialog', aria-labelledby='myModalLabel')
+      .modal-dialog(role='document')
+        .modal-content
+          .modal-header
+            button.close(type='button', data-dismiss='modal', aria-label='Close')
+              span(aria-hidden='true') ×
+            h4#myModalLabel.modal-title Create Ekspedisi
+          .modal-body
+            <form action="/barang" method="post" enctype="multipart/form-data">
+                <div class="form-group">
+                    input.form-control(type='text' placeholder='Kode Barang' name='kode' value="")
+                </div>
+                <div class="form-group">
+                    input.form-control(type='text' placeholder='Nama' name='nama' value="")
+                </div>
+                <div class="form-group">
+                    input.form-control(type='number' placeholder='Harga' name='harga' value="")
+                </div>
+                <div class="form-group">
+                    input.form-control(type='number' placeholder='Stok' name='stok' value="")
+                </div>
+                <div class="form-group">
+                    input.form-control(type='text' placeholder='Deskripsi' name='deskripsi' value="")
+                </div>
+                <div class="form-group">
+                    input.form-control(type='number' placeholder='Diskon' name='diskon' value="")
+                </div>
+                <div class="form-group">
+                    <label for="akses">Kategori :</label>
+                    <select name="kategori" class="form-control">
+                        each kategori, i in kategoris
+                          <option value=#{kategori.id} >#{kategori.nama}</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="akses">Suplier :</label>
+                    <select name="suplier" class="form-control">
+                        each sup, i in supliers
+                          <option value=#{sup.id} >#{sup.nama}</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="akses">Foto :</label>
+                    input.form-control(type='file' placeholder='Foto' name='foto' valu="")
+                </div>
+          .modal-footer
+            button.btn.btn-default(type='button', data-dismiss='modal') Close
+            button.btn.btn-primary(type='submit') Save
+            </form>
+
+block scripts 
+  script.
+    //- alert('tes');
+    //- console.log(datas);
+    $(function () {
+      $('[data-toggle="tooltip"]').tooltip()
+    });
