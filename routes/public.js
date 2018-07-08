@@ -22,7 +22,7 @@ router.post('/login', function(req, res) {
       if(data[0]){
         req.session.loginUser = true;
         req.session.dataLogin = data[0];
-        res.redirect('/');
+        res.redirect('/admin/');
       }else{
         res.render('login',{wasLogin: true});
       }

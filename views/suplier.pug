@@ -23,9 +23,9 @@ block body
             each suplier, i in datas
                 <tr>
                     <td>
-                        a.btn.btn-default(href=`/suplier/edit-`+suplier.id role='button' style="border-width:0")
+                        a.btn.btn-default(href=`/admin/suplier/edit-`+suplier.id role='button' style="border-width:0")
                          span.glyphicon.glyphicon-pencil(aria-hidden='true')
-                        a.btn.btn-default(href=`/suplier/del-`+suplier.id role='button' style="border-width:0")
+                        a.btn.btn-default(href=`/admin/suplier/del-`+suplier.id role='button' style="border-width:0")
                          span.glyphicon.glyphicon-trash(aria-hidden='true')
                     </td>
                     <td>#{suplier.nama}</td>
@@ -46,7 +46,7 @@ block body
               span(aria-hidden='true') ×
             h4#myModalLabel.modal-title Create Suplier
           .modal-body
-            <form action="/suplier" method="post">
+            <form action="/admin/suplier" method="post">
                 <div class="form-group">
                     <label for="exampleInputEmail1"> Nama </label>
                     input.form-control(type='text' placeholder='ekspedisi' name='nama' value="")

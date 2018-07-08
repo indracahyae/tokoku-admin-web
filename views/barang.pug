@@ -28,9 +28,9 @@ block body
             each barang, i in datas
                 <tr>
                     <td>
-                        a.btn.btn-default(href=`/barang/edit-`+barang.id role='button' style="border-width:0")
+                        a.btn.btn-default(href=`/admin/barang/edit-`+barang.id role='button' style="border-width:0")
                          span.glyphicon.glyphicon-pencil(aria-hidden='true')
-                        a.btn.btn-default(href=`/barang/del-`+barang.id role='button' style="border-width:0")
+                        a.btn.btn-default(href=`/admin/barang/del-`+barang.id role='button' style="border-width:0")
                          span.glyphicon.glyphicon-trash(aria-hidden='true')
                     </td>
                     <td>#{barang.kode}</td>
@@ -56,7 +56,7 @@ block body
               span(aria-hidden='true') ×
             h4#myModalLabel.modal-title Create Ekspedisi
           .modal-body
-            <form action="/barang" method="post" enctype="multipart/form-data">
+            <form action="/admin/barang" method="post" enctype="multipart/form-data">
                 <div class="form-group">
                     input.form-control(type='text' placeholder='Kode Barang' name='kode' value="")
                 </div>

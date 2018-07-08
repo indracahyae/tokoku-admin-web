@@ -8,7 +8,8 @@ module.exports = (sequelize, DataTypes) => {
     alamat: DataTypes.STRING,
     id_kota: DataTypes.INTEGER,
     poin: DataTypes.INTEGER,
-    foto: DataTypes.STRING
+    foto: DataTypes.STRING,
+    username: DataTypes.STRING,
   }, {
     timestamps: false,
   });

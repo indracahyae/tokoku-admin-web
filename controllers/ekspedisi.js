@@ -16,7 +16,7 @@ module.exports = {
             id: req.params.id
         }
     });
-    res.redirect('/ekspedisi');
+    res.redirect('/admin/ekspedisi');
   },
   edit: (req,res)=>{
     Ekspedisi.findAll({
@@ -39,7 +39,7 @@ module.exports = {
         }
       })
       .then(data => {
-        res.redirect('/ekspedisi');
+        res.redirect('/admin/ekspedisi');
       }) 
       .catch(error => res.status(400).send(error));
   },
@@ -48,7 +48,7 @@ module.exports = {
       nama: req.body.nama,
     })
     .then(data => {
-      res.redirect('/ekspedisi');
+      res.redirect('/admin/ekspedisi');
     }) 
     .catch(error => res.status(400).send(error));
   }

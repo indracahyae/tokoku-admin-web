@@ -30,7 +30,7 @@ module.exports = {
         }
       })
       .then(data => {
-        res.redirect('/myprofile');
+        res.redirect('/admin/myprofile');
       }) 
       .catch(error => res.status(400).send(error));
   },

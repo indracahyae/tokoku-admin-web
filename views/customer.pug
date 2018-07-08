@@ -11,6 +11,7 @@ block body
         <thead>
             <tr>
                 <th class="col-md-1">#</th>
+                th Username
                 <th>Email</th>
                 <th>Nama</th>
                 <th>Tlp</th>
@@ -25,9 +26,10 @@ block body
             each cust, i in datas
                 <tr>
                     <td>
-                        a.btn.btn-default(href=`/customer/del-`+cust.id role='button' style="border-width:0")
+                        a.btn.btn-default(href=`/admin/customer/del-`+cust.id role='button' style="border-width:0")
                          span.glyphicon.glyphicon-trash(aria-hidden='true')
                     </td>
+                    td #{cust.username}
                     <td>#{cust.email}</td>
                     <td>#{cust.nama}</td>
                     <td>#{cust.tlp}</td>

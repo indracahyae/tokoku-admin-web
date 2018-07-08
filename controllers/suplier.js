@@ -15,7 +15,7 @@ module.exports = {
         }
     })
     .then(data => {
-        res.redirect('/suplier');
+        res.redirect('/admin/suplier');
     }) 
     .catch(error => res.status(400).send(error));
   },
@@ -42,7 +42,7 @@ module.exports = {
         }
       })
       .then(data => {
-        res.redirect('/suplier');
+        res.redirect('/admin/suplier');
       }) 
       .catch(error => res.status(400).send(error));
   },
@@ -54,7 +54,7 @@ module.exports = {
       keterangan: req.body.keterangan,
     })
     .then(data => {
-      res.redirect('/suplier');
+      res.redirect('/admin/suplier');
     }) 
     .catch(error => res.status(400).send(error));
   }

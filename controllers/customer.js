@@ -26,6 +26,6 @@ module.exports = {
             id: req.params.id
         }
     });
-    res.redirect('/customer');
+    res.redirect('/admin/customer');
   },
 };

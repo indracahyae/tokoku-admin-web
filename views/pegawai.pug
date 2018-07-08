@@ -26,9 +26,9 @@ block body
             each pegawai, i in datas
                 <tr>
                     <td>
-                        a.btn.btn-default(href=`/pegawai/edit-`+pegawai.id role='button' style="border-width:0")
+                        a.btn.btn-default(href=`/admin/pegawai/edit-`+pegawai.id role='button' style="border-width:0")
                          span.glyphicon.glyphicon-pencil(aria-hidden='true')
-                        a.btn.btn-default(href=`/pegawai/del-`+pegawai.id role='button' style="border-width:0")
+                        a.btn.btn-default(href=`/admin/pegawai/del-`+pegawai.id role='button' style="border-width:0")
                          span.glyphicon.glyphicon-trash(aria-hidden='true')
                     </td>
                     <td>#{pegawai.username}</td>
@@ -56,7 +56,7 @@ block body
               span(aria-hidden='true') ×
             h4#myModalLabel.modal-title Create Pegawai
           .modal-body
-            <form action="/pegawai" method="post">
+            <form action="/admin/pegawai" method="post">
                 <div class="form-group">
                     input.form-control(type='text' placeholder='Username' name='username' value="")
                 </div>

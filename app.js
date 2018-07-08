@@ -8,6 +8,8 @@ var session = require('express-session');
 
 var routerAdmin = require('./routes/admin');
 var routerPublic = require('./routes/public');
+var routerRestApi = require('./routes/restApi');
+
 var sessionConfig = {
   secret: 'perseb4y4',
   resave: false,
@@ -45,12 +47,16 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(bodyParser.urlencoded({ extended: true }));
 
+app.get('/', function(req, res) {
+  res.redirect('/public/login');
+});
 app.get('/logout', function(req, res) {
   req.session.loginUser = false;
   res.redirect('/public/login');
 });
 app.use('/public', routerPublic);
-app.use('/', adminMiddleware,routerAdmin);
+app.use('/restApi/mobile', routerRestApi);
+app.use('/admin/', adminMiddleware,routerAdmin);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

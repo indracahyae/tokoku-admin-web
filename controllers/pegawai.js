@@ -15,7 +15,7 @@ module.exports = {
         }
     })
     .then(data => {
-        res.redirect('/pegawai');
+        res.redirect('/admin/pegawai');
     }) 
     .catch(error => res.status(400).send(error));
   },
@@ -45,7 +45,7 @@ module.exports = {
         }
       })
       .then(data => {
-        res.redirect('/pegawai');
+        res.redirect('/admin/pegawai');
       }) 
       .catch(error => res.status(400).send(error));
   },
@@ -60,7 +60,7 @@ module.exports = {
       akses: req.body.akses
     })
     .then(data => {
-      res.redirect('/pegawai');
+      res.redirect('/admin/pegawai');
     }) 
     .catch(error => res.status(400).send(error));
   }

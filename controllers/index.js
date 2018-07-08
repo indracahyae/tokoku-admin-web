@@ -4,6 +4,8 @@ const pegawai = require('./pegawai');
 const barang = require('./barang');
 const customer = require('./customer');
 const profile = require('./profile');
+const mobileMyProfile = require('./mobileMyProfile');
+const universal = require('./universal');
 
 module.exports = {
   ekspedisi,
@@ -11,5 +13,7 @@ module.exports = {
   pegawai,
   barang,
   customer,
-  profile
+  profile,
+  mobileMyProfile,
+  universal
 };

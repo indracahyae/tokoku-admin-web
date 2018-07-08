@@ -75,7 +75,7 @@ module.exports = {
         }
     })
     .then(data => {
-        res.redirect('/barang');
+        res.redirect('/admin/barang');
     }) 
     .catch(error => res.status(400).send(error));
   },
@@ -134,7 +134,7 @@ module.exports = {
         }
       })
       .then(data => {
-        res.redirect('/barang');
+        res.redirect('/admin/barang');
       }) 
       .catch(error => res.status(400).send(error));
   },
@@ -161,7 +161,7 @@ module.exports = {
         image: req.file.filename
       })
       .then(data => {
-        res.redirect('/barang');
+        res.redirect('/admin/barang');
       }) 
       .catch(error => res.status(400).send(error));
     });
