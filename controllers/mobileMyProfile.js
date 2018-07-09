@@ -33,8 +33,6 @@ module.exports = {
       alamat: req.body.alamat,
       id_kota: req.body.id_kota,
       tlp: req.body.tlp,
-      poin: req.body.poin,
-      
     }, {
       where: {
         id: req.params.id
@@ -43,7 +41,7 @@ module.exports = {
     .then(data => {
       res.send({
         status: true,
-        message: data
+        data: data
       });
     }) 
     .catch(error => res.status(400).send(error));
