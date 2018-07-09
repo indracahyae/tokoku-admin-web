@@ -1,6 +1,7 @@
 var router = require('express').Router();
 var mobileMyProfileC = require('../controllers').mobileMyProfile;
 var universalC = require('../controllers').universal;
+var mHomeC = require('../controllers').mHome;
 
 router.get('/myprofile/:id',mobileMyProfileC.get);
 router.post('/registerCustomer/',mobileMyProfileC.create);
@@ -12,5 +13,8 @@ router.get('/getProvinsi',universalC.getProvinsi);
 router.get('/getKota/:id_provinsi',universalC.getKota);
 
 router.post('/login',mobileMyProfileC.login);
+
+// MENU HOME
+router.get('/barangs',mHomeC.getBarang);
 
 module.exports = router;
