@@ -16,5 +16,9 @@ router.post('/login',mobileMyProfileC.login);
 
 // MENU HOME
 router.get('/barangs',mHomeC.getBarang);
+router.get('/barangs/:id',mHomeC.selectBarang);
+
+router.get('/keranjang/:id',mHomeC.getKeranjang);
+router.post('/keranjang',mHomeC.addToKeranjang);
 
 module.exports = router;

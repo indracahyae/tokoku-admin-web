@@ -1,4 +1,7 @@
 const BarangM = require('../models').Barang;
+const Suplier = require('../models').Suplier;
+const Kategori = require('../models').Kategori;
+const KeranjangM = require('../models').Keranjang;
 
 module.exports = {
 
@@ -9,27 +12,41 @@ module.exports = {
       }) 
       .catch(error => res.status(400).send(error));
     },
-    update: (req, res)=>{
-      CustomerM.update({
-        username: req.body.username,
-        email: req.body.email,
-        password: req.body.password,
-        nama: req.body.nama,
-        alamat: req.body.alamat,
-        id_kota: req.body.id_kota,
-        tlp: req.body.tlp,
-      }, {
-        where: {
-          id: req.params.id
-        }
-      })
-      .then(data => {
-        res.send({
-          status: true,
-          data: data
-        });
-      }) 
-      .catch(error => res.status(400).send(error));
+    // SELECT BARANG
+    selectBarang: (req, res)=>{
+        BarangM.findAll({
+            where: { id: req.params.id },
+            include: [ Suplier,Kategori ]
+        })
+        .then(datas => {
+            res.send( datas[0] );
+        }) 
+        .catch(error => res.status(400).send(error));
     },
-    
+
+    // KERANJANG
+    getKeranjang(req, res){
+        KeranjangM.findAll({
+            where: { id_customer: req.params.id },
+        })
+        .then(data => {
+            res.send( data );
+        }) 
+        .catch(error => res.status(400).send(error));
+    },
+    addToKeranjang(req, res){
+        let { id_customer, id_barang, jml_barang, total, catatan } = req.body;
+        KeranjangM.create({
+            id_customer, 
+            id_barang,
+            jml_barang,
+            total,
+            catatan
+        })
+        .then(data => {
+            res.status(200).send( data );
+        }) 
+        .catch(error => res.status(400).send(error));
+    }
+
 };
