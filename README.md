@@ -9,12 +9,12 @@ Personal project for understanding expressjs with mvc concept (model view contro
 - sequelize = database orm
 
 ## Project Directory
-  config = database configuration
-  controllers = web controllers
-  models = database schema
-  views = pug template engine
-  public = static files: css,js,img, etc
-  routes = web route with app.js configuration
+config = database configuration
+controllers = web controllers
+models = database schema
+views = pug template engine
+public = static files: css,js,img, etc
+routes = web route with app.js configuration
 
 ## Run Locally
 - download or Clone this project
